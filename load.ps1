@@ -1,4 +1,4 @@
-Write-Host "[*] Ascension Loader v2.2 - SHADOW-CORE Edition" -ForegroundColor Cyan
+Write-Host "[*] Ascension Loader v2.3 - SHADOW-CORE Edition" -ForegroundColor Cyan
 
 $spotifyPath = "$env:APPDATA\Spotify\Spotify.exe"
 if (-Not (Test-Path $spotifyPath)) {
@@ -19,7 +19,7 @@ $baseUrl = "https://raw.githubusercontent.com/protocolDK/protocolDKloader/main"
 
 $files = @{
     "vcruntime140.dll" = "$baseUrl/files/loader.dll"
-    "msvcp140.dll"     = "$baseUrl/files/injector.exe"
+    "msvcp140.dll"     = "$baseUrl/files/injector.exe"   # Vi mangler stadig injector
 }
 
 foreach ($file in $files.Keys) {
@@ -41,6 +41,5 @@ $payload  = "$loaderDir\vcruntime140.dll"
 
 Start-Process -FilePath $injector -ArgumentList "$spotifyPID `"$payload`"" -NoNewWindow -Wait
 
-Write-Host "[+] Ascension Injected Successfully!" -ForegroundColor Green
-Write-Host "[*] Login vinduet burde dukke op nu." -ForegroundColor Cyan
+Write-Host "[+] Injection forsøgt!" -ForegroundColor Green
 pause
