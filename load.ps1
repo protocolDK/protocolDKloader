@@ -1,4 +1,4 @@
-Write-Host "[*] Ascension Loader v3.1 - Fixet navn" -ForegroundColor Cyan
+Write-Host "[*] Ascension Loader v3.1 - Fixet filnavn" -ForegroundColor Cyan
 
 $spotifyPath = "$env:APPDATA\Spotify\Spotify.exe"
 if (-Not (Test-Path $spotifyPath)) {
@@ -21,7 +21,7 @@ $baseUrl = "https://raw.githubusercontent.com/protocolDK/protocolDKloader/main"
 Write-Host "[*] Downloader AscensionGUII.exe..." -ForegroundColor Yellow
 Invoke-WebRequest -Uri "$baseUrl/files/AscensionGUII.exe" -OutFile "$loaderDir\Ascension.exe"
 
-Write-Host "[+] Downloadet og omdøbt til Ascension.exe" -ForegroundColor Green
+Write-Host "[+] Downloadet og omdøbt!" -ForegroundColor Green
 
 Write-Host "[*] Starter Ascension..." -ForegroundColor Cyan
 Start-Process "$loaderDir\Ascension.exe"
